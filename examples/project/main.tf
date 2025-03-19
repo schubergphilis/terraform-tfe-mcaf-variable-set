@@ -20,13 +20,15 @@ resource "tfe_project" "default" {
 }
 
 module "tfe_variable_set" {
+  for_each = local.variable_sets
+
   source = "../.."
 
   description       = each.value.description
-  global            = try(each.value.global, false)
   name              = each.key
-  variables         = each.value.variables
   parent_project_id = tfe_project.default.id
+  priority          = try(each.value.global, false)
+  variables         = each.value.variables
 }
 
 # Optionally, you can assign access of the variable set to a project.
