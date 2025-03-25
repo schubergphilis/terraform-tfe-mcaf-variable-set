@@ -36,12 +36,12 @@ No modules.
 | <a name="input_variables"></a> [variables](#input\_variables) | Map of variables. | <pre>map(object({<br/>    category    = string<br/>    description = optional(string, null)<br/>    hcl         = optional(bool, false)<br/>    sensitive   = optional(bool, false)<br/>    value       = string<br/>  }))</pre> | n/a | yes |
 | <a name="input_global"></a> [global](#input\_global) | Whether the variable set applies to all workspaces in the organization. | `bool` | `false` | no |
 | <a name="input_organization"></a> [organization](#input\_organization) | Name of the organization. If omitted, organization must be defined in the provider config. | `string` | `null` | no |
-| <a name="input_parent_project_id"></a> [parent\_project\_id](#input\_parent\_project\_id) | ID of the project that should own the variable set. If set, then var.global must be false. To assign whether a variable set should be applied to a project, use the tfe\_project\_variable\_set resource. | `string` | `null` | no |
+| <a name="input_parent_project_id"></a> [parent\_project\_id](#input\_parent\_project\_id) | ID of the project that should own the variable set. If set, then var.global must be false. | `string` | `null` | no |
 | <a name="input_priority"></a> [priority](#input\_priority) | Whether the variables in this set can be over-written by more specific scopes including values set on the command line. | `bool` | `false` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_id"></a> [id](#output\_id) | The variable set ID |
+| <a name="output_id"></a> [id](#output\_id) | The variable set ID. |
 <!-- END_TF_DOCS -->
