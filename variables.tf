@@ -28,7 +28,7 @@ variable "organization" {
 variable "parent_project_id" {
   type        = string
   default     = null
-  description = "ID of the project that should own the variable set. If set, then var.global must be false. To assign whether a variable set should be applied to a project, use the tfe_project_variable_set resource."
+  description = "ID of the project that should own the variable set. If set, then var.global must be false."
 }
 
 variable "priority" {
