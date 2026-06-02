@@ -1,3 +1,10 @@
+variable "attach_to_project" {
+  type        = bool
+  default     = true
+  description = "Whether to attach the variable set to the parent project if 'parent_project_id' is set."
+  nullable    = false
+}
+
 variable "description" {
   type        = string
   description = "Description of the variable set."

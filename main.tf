@@ -7,6 +7,13 @@ resource "tfe_variable_set" "default" {
   priority          = var.priority
 }
 
+resource "tfe_project_variable_set" "default" {
+  count = var.attach_to_project && var.parent_project_id != null ? 1 : 0
+
+  project_id      = var.parent_project_id
+  variable_set_id = tfe_variable_set.default.id
+}
+
 resource "tfe_variable" "default" {
   for_each = var.variables
 
